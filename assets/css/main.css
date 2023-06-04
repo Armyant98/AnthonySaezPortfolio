@@ -65,6 +65,19 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Color Presets */
+:root {
+	--dark-text-color: #5939CC;
+	--dark-bg-color: #000000;
+	--dark-primaryButton-color: #4685ff;
+	--dark-secondaryButton-color: #f2f2f2;
+	--dark-accent-color: #ffb084;
+  }
+
+
+
+
+
 /* Basic */
 
 	@-ms-viewport {
@@ -414,7 +427,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #424242;
+		color: var(--dark-text-color);
 	}
 
 	blockquote {
@@ -2951,7 +2964,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background: #ff8b77;
+			background: var(--dark-bg-color);
 		}
 
 		.wrapper.style2 {
@@ -3444,7 +3457,7 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background: #ff8b77;
+		background: var(--dark-text-color);
 		color: #ffffff;
 		cursor: default;
 		padding: 1rem 2rem;
@@ -3919,7 +3932,7 @@ input, select, textarea {
 		}
 
 		#banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-			color: #ffffff;
+			color: var(--dark-text-color);
 		}
 
 		#banner blockquote {
