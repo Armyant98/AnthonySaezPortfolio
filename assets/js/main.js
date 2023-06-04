@@ -4,6 +4,24 @@
 	License: pixelarity.com/license
 */
 
+//section y offsets for animation purposes
+let one = document.getElementById("one");
+let oneRect= one.getBoundingClientRect();
+let oneY = oneRect.y;
+oneY = oneY + window.scrollY
+console.log(oneY)
+
+
+
+addEventListener("resize", (event) => {
+	let one = document.getElementById("one");
+	let oneRect= one.getBoundingClientRect();
+	let oneY = oneRect.y;
+	oneY = oneY + window.scrollY
+	console.log(oneY)
+});
+
+
 (function($) {
 
 	var	$window	= $(window),
@@ -37,13 +55,13 @@
 
 	//header 
 	$(document).ready(function () {
-		var header = $("header");
+		var header = $("#header");
 	  
 		$(window).scroll(function () {
 	      if ($(window).scrollTop() === 0 ) {
 			header.slideDown();
 		  }
-		  else if ( $(window).scrollTop() > 1000 ) {
+		  else if ( $(window).scrollTop() > oneY ) {
 			header.addClass("fixed");
 			header.slideDown();
 		  } else {

@@ -207,7 +207,7 @@ input, select, textarea {
 			
 
 	header h1:before, header h2:before, header h3:before, header h4:before, header h5:before, header h6:before {
-		background-color: #ff8b77;
+		background-color: var(--dark-accent-color);
 		content: '';
 		display: block;
 		height: 2px;
@@ -2028,8 +2028,8 @@ input, select, textarea {
 	button,
 	.button {
 		background-color: transparent;
-		box-shadow: inset 0 0 0 1px #ff8b77;
-		color: #ff8b77 !important;
+		box-shadow: inset 0 0 0 1px var(--dark-accent-color);
+		color: var(--dark-accent-color) !important;
 	}
 
 		input[type="submit"]:hover,
@@ -2963,7 +2963,7 @@ input, select, textarea {
 			padding-top: 6rem;
 		}
 
-		.wrapper.style1 {
+		.wrapper.dark {
 			background: var(--dark-bg-color);
 		}
 
@@ -2971,7 +2971,7 @@ input, select, textarea {
 			background: #6d64e7;
 		}
 
-		.wrapper.style3 {
+		.wrapper.light {
 			background: #fafafa;
 		}
 
@@ -3301,7 +3301,7 @@ input, select, textarea {
 				}
 
 			.spotlights .spotlight .content {
-				background: #ff8b77;
+				background: var(--dark-text-color);
 				border-radius: 0 0 4px 4px;
 				font-weight: 700;
 				padding: 1.25rem 1rem;
@@ -3392,7 +3392,7 @@ input, select, textarea {
 		}
 
 			.profiles .profile:before {
-				background: #ff8b77;
+				background: var(--dark-text-color);
 				border-radius: 4px 4px 0 0;
 				content: '';
 				height: 9rem;
@@ -3932,8 +3932,13 @@ input, select, textarea {
 		}
 
 		#banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-			color: var(--dark-text-color);
+			color: white;
 		}
+
+		#banner h1 div {
+			color: var(--dark-text-color)
+		}
+
 
 		#banner blockquote {
 			border-left-color: rgba(255, 255, 255, 0.25);
@@ -4188,7 +4193,7 @@ input, select, textarea {
 		}
 
 		#footer .copyright {
-			background: #6158dd;
+			background: var(--dark-text-color);
 			color: rgba(255, 255, 255, 0.4);
 			margin-top: 6rem;
 			padding: 4rem 2rem;
@@ -4447,7 +4452,7 @@ input, select, textarea {
 					display: -webkit-flex;
 					display: -ms-flex;
 					display: flex;
-					background: #ff8b77;
+					background: var(--dark-accent-color);
 					border-radius: 4px;
 					box-shadow: 0px 15px 59px -20px rgba(0, 0, 0, 0.35);
 					margin-bottom: 2rem;
@@ -4512,3 +4517,13 @@ input, select, textarea {
 			}
 
 		}
+
+
+/* section specific */
+
+.logo strong {
+	color: var(--dark-text-color);
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px;
+}
