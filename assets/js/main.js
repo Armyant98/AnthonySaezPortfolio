@@ -35,6 +35,26 @@
 			baseZIndex: 100000
 		});
 
+	//header 
+	$(document).ready(function () {
+		var header = $("header");
+	  
+		$(window).scroll(function () {
+	      if ($(window).scrollTop() === 0 ) {
+			header.slideDown();
+		  }
+		  else if ( $(window).scrollTop() > 1000 ) {
+			header.addClass("fixed");
+			header.slideDown();
+		  } else {
+			header.slideUp(400, function () {
+			  header.removeClass("fixed");
+			});
+		  }
+		});
+	  });
+	  
+
 	// Menu.
 		$('<a href="#navPanel" class="navPanelToggle"><span>Menu</span></a>')
 			.appendTo($header);
@@ -61,6 +81,8 @@
 
 })(jQuery);
 
+
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -70,3 +92,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+
+//GSAP
+
+// ScrollTrigger.create({
+// 	start: 'top -1000',
+// 	end: 99999,
+// 	toggleClass: {className: 'fixed', targets: '#header'}
+//   });
