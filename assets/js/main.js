@@ -21,6 +21,50 @@ addEventListener("resize", (event) => {
 	console.log(oneY)
 });
 
+//accordion
+
+//height for accordion to be adjustable and allow smooth open/close
+
+
+
+const expandProjects = document.querySelector('#projectExpand')
+const accordion = document.getElementById('projectAccordion');
+const projectContainer =  document.getElementById('projectContainer')
+
+
+expandProjects.addEventListener('click', expand)
+
+function expand(){
+	
+	
+	accordion.classList.toggle('expand')
+	console.log('made it')
+
+	var projectsAlwaysVisible = document.querySelector('#inner');
+	var projectHeight = projectsAlwaysVisible.offsetHeight;
+	console.log(projectHeight)
+	let accordionByClass = document.querySelector('.accordion.expand')
+
+	if (accordion.classList.contains('expand')){
+		expandProjects.innerText = 'Show less'
+		accordion.classList.add('gs_expand')
+		
+	}
+
+	else{
+		expandProjects.innerText = 'see all projects'
+		accordion.classList.remove('gs_expand')
+		accordion.setAttribute('style', `height: 0px`)
+	}
+
+	
+	accordionByClass.setAttribute('style', `height: ${projectHeight}px`)
+	console.log(accordionByClass.offsetHeight)
+	
+}
+
+	
+
 
 (function($) {
 
@@ -97,10 +141,12 @@ addEventListener("resize", (event) => {
 					side: 'right'
 				});
 
+		
+
 })(jQuery);
 
 
-
+//smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -112,7 +158,105 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+
 //GSAP
+
+function animateFrom(elem, direction) {
+	direction = direction || 1;
+	var x = 0,
+		y = direction * 200;
+	if(elem.classList.contains("gs_reveal_fromLeft")) {
+	  x = -100;
+	  y = 0;
+	} else if (elem.classList.contains("gs_reveal_fromRight")) {
+	  x = 100;
+	  y = 0;
+	}
+	elem.style.transform = "translate(" + x + "px, " + y + "px)";
+	elem.style.opacity = "0";
+	gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+	  duration: 1.25, 
+	  x: 0,
+	  y: 0, 
+	  autoAlpha: 1, 
+	  ease: "expo", 
+	  overwrite: "auto"
+	});
+  }
+  
+  function hide(elem) {
+	gsap.set(elem, {autoAlpha: 0});
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+	gsap.registerPlugin(ScrollTrigger);
+
+	
+
+	
+	gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
+	  hide(elem); // assure that the element is hidden when scrolled into view
+	  
+	  ScrollTrigger.create({
+		trigger: elem,
+		 markers: true,
+		onEnter: function() { animateFrom(elem) }, 
+		onEnterBack: function() { animateFrom(elem, -1) },
+		onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+	  });
+	});
+	
+  });
+  
+
+
+  // function for height recalc when exapnd button is hit 
+  function animateFrom(elem, direction) {
+	direction = direction || 1;
+	var x = 0,
+		y = direction * 200;
+	if(elem.classList.contains("gs_reveal_fromLeft")) {
+	  x = -100;
+	  y = 0;
+	} else if (elem.classList.contains("gs_reveal_fromRight")) {
+	  x = 100;
+	  y = 0;
+	}
+	elem.style.transform = "translate(" + x + "px, " + y + "px)";
+	elem.style.opacity = "0";
+	gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+	  duration: 1.25, 
+	  x: 0,
+	  y: 0, 
+	  autoAlpha: 1, 
+	  ease: "expo", 
+	  overwrite: "auto"
+	});
+  }
+  
+  function hide(elem) {
+	gsap.set(elem, {autoAlpha: 0});
+  }
+  
+  expandProjects.addEventListener("click", function() {
+	gsap.registerPlugin(ScrollTrigger);
+
+	
+
+	
+	gsap.utils.toArray(".gs_expanded").forEach(function(elem) {
+	  hide(elem); // assure that the element is hidden when scrolled into view
+	  
+	  ScrollTrigger.create({
+		trigger: elem,
+		markers: true,
+		onEnter: function() { animateFrom(elem) }, 
+		onEnterBack: function() { animateFrom(elem, -1) },
+		onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+	  });
+	});
+	
+  });
 
 // ScrollTrigger.create({
 // 	start: 'top -1000',

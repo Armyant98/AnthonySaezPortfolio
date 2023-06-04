@@ -2726,6 +2726,12 @@ input, select, textarea {
 		padding-left: 0;
 	}
 
+	.icon.alt + .label{
+		color: white !important;
+	}
+
+
+
 		ul.feature-icons li {
 			padding: 0 2.5rem;
 			text-align: center;
@@ -3919,7 +3925,7 @@ input, select, textarea {
 			color: #ffffff;
 		}
 
-		#banner a {
+		#banner a, .icon.alt {
 			color: #ffffff;
 		}
 
@@ -4527,3 +4533,87 @@ input, select, textarea {
 	border-radius: 5px;
 	padding: 5px;
 }
+
+#projectAccordion > * {
+	z-index: -2;
+}
+
+
+
+#projectAccordion {
+	overflow: hidden;
+	height: 0px;
+	opacity: 0;
+	-webkit-transition: all .5s ease-in !important;
+    -moz-transition: all .5s ease-in!important;
+    -ms-transition: all .5s ease-in !important;
+    -o-transition: all .5s ease-in !important;
+    transition: all .5s ease-in !important;
+	
+}
+
+.accordion.expand {
+	opacity: 1 !important;
+	z-index: 1;
+	transform: translateY(1em);	
+}
+
+#projectAccordion > * {
+	z-index: 1;
+}
+
+
+#one footer {
+	padding: 0;
+}
+
+.feature-icons img {
+	width: 50%;
+	height: auto;
+	position: relative;
+	
+	
+}
+
+.icon.alt.img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hidden{
+	opacity: 0;
+}
+
+.gs_reveal {
+	opacity: 0;
+	visibility: hidden ;
+	will-change: transform, opacity;
+  }
+
+  .gs_expanded {
+	opacity: 0;
+	visibility: hidden ;
+	will-change: transform, opacity;
+  }
+
+  .wrapper.style1.gs_reveal{
+	padding-top: 10%;
+  }
+
+  header.major:first-of-type {
+	padding-bottom: 10px !important;
+  }
+
+  .image.gs_reveal {
+	padding-top: 20px;
+  }
+
+
+  #projectContainter .wrapper.style1:last-of-type {
+	padding-bottom: 10px;
+  }
+
+  .profile {
+	height: 50%;
+  }
