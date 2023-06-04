@@ -4617,3 +4617,16 @@ input, select, textarea {
   .profile {
 	height: 50%;
   }
+
+
+  #two > .wrapper {
+	padding-top: 0;
+  }
+
+  #two > .wrapper > .inner > * {
+	padding-top: 7% !important;
+  }
+
+  #projectContainer {
+	padding: 0 !important;
+  }

@@ -33,8 +33,14 @@ const projectContainer =  document.getElementById('projectContainer')
 
 
 expandProjects.addEventListener('click', expand)
+expandProjects.addEventListener('click', refresh)
+
+function refresh(){
+	ScrollTrigger.refresh(true)
+}
 
 function expand(){
+	
 	
 	
 	accordion.classList.toggle('expand')
@@ -48,6 +54,7 @@ function expand(){
 	if (accordion.classList.contains('expand')){
 		expandProjects.innerText = 'Show less'
 		accordion.classList.add('gs_expand')
+		
 		
 	}
 
@@ -205,6 +212,9 @@ function animateFrom(elem, direction) {
 		onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
 	  });
 	});
+
+
+
 	
   });
   
