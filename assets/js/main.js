@@ -104,7 +104,7 @@ function expand(){
 			baseZIndex: 100000
 		});
 
-	//header 
+	//header reappear upon entering first section
 	$(document).ready(function () {
 		var header = $("#header");
 	  
@@ -112,7 +112,7 @@ function expand(){
 	      if ($(window).scrollTop() === 0 ) {
 			header.slideDown();
 		  }
-		  else if ( $(window).scrollTop() > oneY ) {
+		  else if ( $(window).scrollTop() >= oneY -1 ) {
 			header.addClass("fixed");
 			header.slideDown();
 		  } else {
@@ -206,7 +206,7 @@ function animateFrom(elem, direction) {
 	  
 	  ScrollTrigger.create({
 		trigger: elem,
-		 markers: true,
+		markers: true,
 		onEnter: function() { animateFrom(elem) }, 
 		onEnterBack: function() { animateFrom(elem, -1) },
 		onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
@@ -259,7 +259,7 @@ function animateFrom(elem, direction) {
 	  
 	  ScrollTrigger.create({
 		trigger: elem,
-		markers: true,
+		// markers: true,
 		onEnter: function() { animateFrom(elem) }, 
 		onEnterBack: function() { animateFrom(elem, -1) },
 		onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
