@@ -3381,10 +3381,10 @@ input, select, textarea {
 		-webkit-align-items: -webkit-stretch;
 		-ms-align-items: -ms-stretch;
 		align-items: stretch;
-		-moz-justify-content: space-between;
-		-webkit-justify-content: space-between;
-		-ms-justify-content: space-between;
-		justify-content: space-between;
+		-moz-justify-content: space-around;
+		-webkit-justify-content: space-around;
+		-ms-justify-content: space-around;
+		justify-content: space-around;
 	}
 
 		.profiles .profile {
