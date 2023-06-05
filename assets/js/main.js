@@ -59,7 +59,7 @@ function expand(){
 	}
 
 	else{
-		expandProjects.innerText = 'see all projects'
+		expandProjects.innerText = 'Show more'
 		accordion.classList.remove('gs_expand')
 		accordion.setAttribute('style', `height: 0px`)
 	}
