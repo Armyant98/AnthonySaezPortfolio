@@ -273,3 +273,7 @@ function animateFrom(elem, direction) {
 // 	end: 99999,
 // 	toggleClass: {className: 'fixed', targets: '#header'}
 //   });
+
+
+//light mode 
+

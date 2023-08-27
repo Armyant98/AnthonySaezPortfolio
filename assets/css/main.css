@@ -66,12 +66,14 @@ input, select, textarea {
 }
 
 /* Color Presets */
-:root {
+body {
 	--dark-text-color: #5939CC;
 	--dark-bg-color: #313338;
 	--dark-primaryButton-color: #4685ff;
-	--dark-secondaryButton-color: #f2f2f2;
+	--dark-secondaryButton-color: #f2f2f2; /* for text to gray */
 	--dark-accent-color: #ffb084;
+	--dark-primary-button-color: #ffb084; /* main button to purple*/
+	--icon-colors: #f2f2f2;
   }
 
 
@@ -427,6 +429,10 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
+		color: var(--dark-secondaryButton-color);
+	}
+
+	#projectContainer h3{
 		color: var(--dark-text-color);
 	}
 
@@ -3091,7 +3097,7 @@ input, select, textarea {
 		-ms-align-items: -ms-flex-start;
 		align-items: flex-start;
 		background-color: #000000;
-		color: #ffffff;
+		color: var(--dark-secondaryButton-color);
 		background: none;
 		margin-bottom: 2rem;
 	}
@@ -3113,7 +3119,7 @@ input, select, textarea {
 		}
 
 		.spotlights h1, .spotlights h2, .spotlights h3, .spotlights h4, .spotlights h5, .spotlights h6 {
-			color: #ffffff;
+			color: var(--dark-secondaryButton-color);
 		}
 
 		.spotlights blockquote {
@@ -3934,7 +3940,7 @@ input, select, textarea {
 		}
 
 		#banner a, .icon.alt {
-			color: #ffffff;
+			color: var(--icon-colors);
 		}
 
 			#banner a:hover {
@@ -3946,7 +3952,7 @@ input, select, textarea {
 		}
 
 		#banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-			color: white;
+			color: var(--dark-secondaryButton-color);
 		}
 
 		#banner h1 div {
@@ -3977,8 +3983,8 @@ input, select, textarea {
 		#banner button,
 		#banner .button {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 1px #ff8b77;
-			color: #ff8b77 !important;
+			box-shadow: inset 0 0 0 1px var(--dark-primary-button-color);
+			color: var(--dark-primary-button-color) !important;
 		}
 
 			#banner input[type="submit"]:hover,
@@ -4192,7 +4198,7 @@ input, select, textarea {
 		}
 
 		#footer h1, #footer h2, #footer h3, #footer h4, #footer h5 {
-			color: #ffffff;
+			color: var(--dark-secondaryButton-color);
 		}
 
 		#footer input[type="text"],
