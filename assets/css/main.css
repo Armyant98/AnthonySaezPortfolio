@@ -234,6 +234,9 @@ body.light {
 		margin-right: 0;
 	}
 
+
+	
+
 		@media screen and (max-width: 980px) {
 
 			header h1.left:before, header h2.left:before, header h3.left:before, header h4.left:before, header h5.left:before, header h6.left:before {
@@ -3530,24 +3533,32 @@ body.light {
 			padding: 2rem;
 		}
 
-		#header > nav {
+		#header  nav {
 			margin: 0;
 		}
 
-			#header > nav > ul {
+		#theme-switch{
+			color: white;
+		}
+
+		#mobile-toggle {
+			display: none;
+		}
+
+			#header  nav > ul {
 				list-style: none;
 				margin: 0;
 				padding: 0;
 			}
 
-				#header > nav > ul > li {
+				#header  nav > ul > li {
 					display: inline-block;
 					margin: 0 .15rem;
 					position: relative;
 					text-align: center;
 				}
 
-					#header > nav > ul > li > a {
+					#header  nav > ul > li > a {
 						-moz-transition: box-shadow 0.2s ease-in-out;
 						-webkit-transition: box-shadow 0.2s ease-in-out;
 						-ms-transition: box-shadow 0.2s ease-in-out;
@@ -3561,15 +3572,15 @@ body.light {
 						text-decoration: none;
 					}
 
-						#header > nav > ul > li > a:hover {
+						#header  nav > ul > li > a:hover {
 							box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 						}
 
-						#header > nav > ul > li > a.dropdown {
+						#header  nav > ul > li > a.dropdown {
 							padding-left: 2.5rem;
 						}
 
-							#header > nav > ul > li > a.dropdown:before {
+							#header  nav > ul > li > a.dropdown:before {
 								-moz-transition: background-image 0.2s ease-in-out;
 								-webkit-transition: background-image 0.2s ease-in-out;
 								-ms-transition: background-image 0.2s ease-in-out;
@@ -3596,15 +3607,15 @@ body.light {
 								width: 1rem;
 							}
 
-							#header > nav > ul > li > a.dropdown:hover:before {
+							#header  nav > ul > li > a.dropdown:hover:before {
 								background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cstyle%3Eline %7Bstroke: %23fff%3Bstroke-width: 5px%3B%7D%3C/style%3E%3Cline x1='32' y1='16' x2='64' y2='48' /%3E%3Cline x1='32' y1='80' x2='64' y2='48' /%3E%3C/svg%3E");
 							}
 
-					#header > nav > ul > li > ul {
+					#header  nav > ul > li > ul {
 						display: none;
 					}
 
-					#header > nav > ul > li.active > a {
+					#header  nav > ul > li.active > a {
 						color: #ffffff;
 					}
 
@@ -3702,6 +3713,8 @@ body.light {
 				margin: 0 0 0 0.625rem;
 			}
 
+			
+
 		@media screen and (max-width: 1280px) {
 
 			#header {
@@ -3748,6 +3761,7 @@ body.light {
 					display: none;
 				}
 
+
 				#header > .navPanelToggle {
 					display: block;
 					right: 1rem;
@@ -3764,6 +3778,14 @@ body.light {
 					padding: 0;
 					position: absolute;
 					top: 0;
+				}
+
+				#mobile-toggle{
+					display: inline-block;
+					position: absolute;
+					top:0;
+					text-align: center;
+					
 				}
 
 		}
