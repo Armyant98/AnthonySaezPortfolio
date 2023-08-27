@@ -277,3 +277,19 @@ function animateFrom(elem, direction) {
 
 //light mode 
 
+
+themeSwitch = document.getElementById('theme-switch')
+currentTheme = document.getElementById('current-theme')
+
+themeSwitch.addEventListener('click', toggleTheme)
+
+function toggleTheme(){
+	if(currentTheme.classList.contains('bi-moon-stars-fill')){
+		currentTheme.classList.remove('bi-moon-stars-fill')
+		currentTheme.classList.add('bi-brightness-high-fill')
+	}else{
+		currentTheme.classList.add('bi-moon-stars-fill')
+		currentTheme.classList.remove('bi-brightness-high-fill')
+	}
+	
+}
