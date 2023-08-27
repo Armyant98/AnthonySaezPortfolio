@@ -3339,6 +3339,11 @@ body.light {
 				text-align: center;
 			}
 
+
+		.spotlight > .content {
+			color: white;
+		}
+
 		@media screen and (max-width: 980px) {
 
 			.spotlights {
