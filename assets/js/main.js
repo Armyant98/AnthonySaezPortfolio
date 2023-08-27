@@ -278,18 +278,23 @@ function animateFrom(elem, direction) {
 //light mode 
 
 
-themeSwitch = document.getElementById('theme-switch')
-currentTheme = document.getElementById('current-theme')
+const themeSwitch = document.getElementById('theme-switch')
+const currentTheme = document.getElementById('current-theme')
+const body = document.body
 
 themeSwitch.addEventListener('click', toggleTheme)
 
 function toggleTheme(){
+	//toggle icon 
 	if(currentTheme.classList.contains('bi-moon-stars-fill')){
 		currentTheme.classList.remove('bi-moon-stars-fill')
 		currentTheme.classList.add('bi-brightness-high-fill')
+		body.classList.add('light')
 	}else{
 		currentTheme.classList.add('bi-moon-stars-fill')
 		currentTheme.classList.remove('bi-brightness-high-fill')
+		body.classList.remove('light')
 	}
+	//toggle styles
 	
 }

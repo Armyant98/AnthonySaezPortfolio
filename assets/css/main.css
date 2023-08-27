@@ -76,6 +76,16 @@ body {
 	--icon-colors: #f2f2f2;
   }
 
+body.light {
+	--dark-text-color: #5939CC; 
+	--dark-bg-color: #f2f2f2;
+	--dark-primaryButton-color: #4685ff;
+	--dark-secondaryButton-color: #313338; /* for text to gray */
+	--dark-accent-color: #ffb084;
+	--dark-primary-button-color: #5939CC; /* main button to purple*/
+	--icon-colors: #ffb084;
+}
+
 
 
 
@@ -2742,7 +2752,7 @@ body {
 	}
 
 	.icon.alt + .label{
-		color: white !important;
+		color: var(--icon-colors) !important;
 	}
 
 
@@ -3932,7 +3942,7 @@ body {
 /* Banner */
 
 	#banner {
-		color: #ffffff;
+		color: var(--dark-secondaryButton-color);
 	}
 
 		#banner input, #banner select, #banner textarea {
@@ -4189,7 +4199,7 @@ body {
 /* Footer */
 
 	#footer {
-		color: #ffffff;
+		color: var(--dark-secondaryButton-color);
 		text-align: center;
 	}
 
