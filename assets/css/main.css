@@ -74,6 +74,7 @@ body {
 	--dark-accent-color: #ffb084;
 	--dark-primary-button-color: #ffb084; /* main button to purple*/
 	--icon-colors: #f2f2f2;
+	--hover-icon-colors: gray;
   }
 
 body.light {
@@ -84,6 +85,7 @@ body.light {
 	--dark-accent-color: #ffb084;
 	--dark-primary-button-color: #5939CC; /* main button to purple*/
 	--icon-colors: #ffb084;
+	--hover-icon-colors: #313338;
 }
 
 
@@ -3959,7 +3961,7 @@ body.light {
 		}
 
 			#banner a:hover {
-				color: rgba(255, 255, 255, 0.65);
+				color: var(--hover-icon-colors);
 			}
 
 		#banner strong, #banner b {
