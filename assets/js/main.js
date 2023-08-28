@@ -282,6 +282,7 @@ const themeSwitch = document.getElementById('theme-switch')
 const currentTheme = document.getElementById('current-theme')
 const body = document.body
 const mobileToggle = document.getElementById('mobile-toggle')
+const gsapIcon = document.querySelector('#gsap')
 
 themeSwitch.addEventListener('click', toggleTheme)
 
@@ -291,10 +292,13 @@ function toggleTheme(){
 		currentTheme.classList.remove('bi-moon-stars-fill')
 		currentTheme.classList.add('bi-brightness-high-fill')
 		body.classList.add('light')
+		gsapIcon.src = './images/gsap-light.png'
+		
 	}else{
 		currentTheme.classList.add('bi-moon-stars-fill')
 		currentTheme.classList.remove('bi-brightness-high-fill')
 		body.classList.remove('light')
+		gsapIcon.src = './images/gsap.png'
 	}
 
 	
