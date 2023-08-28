@@ -273,3 +273,57 @@ function animateFrom(elem, direction) {
 // 	end: 99999,
 // 	toggleClass: {className: 'fixed', targets: '#header'}
 //   });
+
+
+//light mode 
+
+
+const themeSwitch = document.getElementById('theme-switch')
+const currentTheme = document.getElementById('current-theme')
+const body = document.body
+const mobileToggle = document.getElementById('mobile-toggle')
+const gsapIcon = document.querySelector('#gsap')
+
+themeSwitch.addEventListener('click', toggleTheme)
+
+function toggleTheme(){
+	//toggle icon and styles
+	if(currentTheme.classList.contains('bi-moon-stars-fill')){
+		currentTheme.classList.remove('bi-moon-stars-fill')
+		currentTheme.classList.add('bi-brightness-high-fill')
+		body.classList.add('light')
+		gsapIcon.src = './images/gsap-light.png'
+		
+	}else{
+		currentTheme.classList.add('bi-moon-stars-fill')
+		currentTheme.classList.remove('bi-brightness-high-fill')
+		body.classList.remove('light')
+		gsapIcon.src = './images/gsap.png'
+	}
+
+	
+}
+
+
+
+//checks window width to move toggle into empty div that allows the toggle to be in the center of the nav bar on mobile
+
+if(window.innerWidth <= 980){
+	mobileToggle.append(themeSwitch)
+}
+else if (window.innerWidth > 980){
+	document.querySelector('#nav-list').prepend(themeSwitch)
+}
+
+
+
+window.addEventListener('resize' , toggleThemeMobile )
+
+function toggleThemeMobile(){
+	if(window.innerWidth <= 980){
+		mobileToggle.append(themeSwitch)
+	}
+	else if (window.innerWidth > 980){
+		document.querySelector('#nav-list').prepend(themeSwitch)
+	}
+}

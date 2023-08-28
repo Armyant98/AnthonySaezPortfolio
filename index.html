@@ -17,22 +17,28 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
 		<link rel="manifest" href="./images/site.webmanifest">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header" class="alt">
 				<a class="logo" href="index.html"><strong>[A]</strong>nthony Saez</a>
+				<div id="mobile-toggle"></div>
 				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Home</a></li>
+					<ul id="nav-list">
+						<a href="#" id="theme-switch"><i id='current-theme' class="bi bi-moon-stars-fill"></i></a>
+						<li class="current"><a href="#banner">Home</a></li>
 						<li><a href="#one">Projects</a></li>
 						<li><a href="#two">Skills</a></li>
 						<li><a href="#three">About</a></li>
 						<li><a href="#footer">Contact</a></li>
-
+						
 					</ul> 
 				</nav>
+				
+				
+						
 			</header>
 
 		<!-- Banner -->
@@ -175,7 +181,7 @@
 						<li><span class="icon alt"><i class="fa-brands fa-css3-alt fa-2xl"></i></span><span class="label">CSS3</span></li>
 						<li><span class="icon alt"><i class="fa-brands fa-js fa-2xl"></i></span><span class="label">Javascript</span></li>
 						<li><span class="icon alt"><i class="fa-brands fa-figma fa-2xl"></i></span><span class="label">Figma</span></li>
-						<li><span class="icon alt img "><img src="./images/gsap.png"></i></span><span class="label">GSAP3</span></li>
+						<li><span class="icon alt img "><img id="gsap" src="./images/gsap.png"></i></span><span class="label">GSAP3</span></li>
 					</ul>
 				</div>
 			</div>

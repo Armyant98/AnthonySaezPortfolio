@@ -66,13 +66,27 @@ input, select, textarea {
 }
 
 /* Color Presets */
-:root {
+body {
 	--dark-text-color: #5939CC;
 	--dark-bg-color: #313338;
 	--dark-primaryButton-color: #4685ff;
-	--dark-secondaryButton-color: #f2f2f2;
+	--dark-secondaryButton-color: #f2f2f2; /* for text to gray */
 	--dark-accent-color: #ffb084;
+	--dark-primary-button-color: #ffb084; /* main button to purple*/
+	--icon-colors: #f2f2f2;
+	--hover-icon-colors: gray;
   }
+
+body.light {
+	--dark-text-color: #5939CC; 
+	--dark-bg-color: #f2f2f2;
+	--dark-primaryButton-color: #4685ff;
+	--dark-secondaryButton-color: #313338; /* for text to gray */
+	--dark-accent-color: #ffb084;
+	--dark-primary-button-color: #5939CC; /* main button to purple*/
+	--icon-colors: #ffb084;
+	--hover-icon-colors: #313338;
+}
 
 
 
@@ -219,6 +233,9 @@ input, select, textarea {
 		margin-left: 0;
 		margin-right: 0;
 	}
+
+
+	
 
 		@media screen and (max-width: 980px) {
 
@@ -427,6 +444,10 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
+		color: var(--dark-secondaryButton-color);
+	}
+
+	#projectContainer h3{
 		color: var(--dark-text-color);
 	}
 
@@ -2736,7 +2757,7 @@ input, select, textarea {
 	}
 
 	.icon.alt + .label{
-		color: white !important;
+		color: var(--icon-colors) !important;
 	}
 
 
@@ -3091,7 +3112,7 @@ input, select, textarea {
 		-ms-align-items: -ms-flex-start;
 		align-items: flex-start;
 		background-color: #000000;
-		color: #ffffff;
+		color: var(--dark-secondaryButton-color);
 		background: none;
 		margin-bottom: 2rem;
 	}
@@ -3113,7 +3134,7 @@ input, select, textarea {
 		}
 
 		.spotlights h1, .spotlights h2, .spotlights h3, .spotlights h4, .spotlights h5, .spotlights h6 {
-			color: #ffffff;
+			color: var(--dark-secondaryButton-color);
 		}
 
 		.spotlights blockquote {
@@ -3323,6 +3344,11 @@ input, select, textarea {
 				text-align: center;
 			}
 
+
+		.spotlight > .content {
+			color: white;
+		}
+
 		@media screen and (max-width: 980px) {
 
 			.spotlights {
@@ -3507,24 +3533,32 @@ input, select, textarea {
 			padding: 2rem;
 		}
 
-		#header > nav {
+		#header  nav {
 			margin: 0;
 		}
 
-			#header > nav > ul {
+		#theme-switch{
+			color: white;
+		}
+
+		#mobile-toggle {
+			display: none;
+		}
+
+			#header  nav > ul {
 				list-style: none;
 				margin: 0;
 				padding: 0;
 			}
 
-				#header > nav > ul > li {
+				#header  nav > ul > li {
 					display: inline-block;
 					margin: 0 .15rem;
 					position: relative;
 					text-align: center;
 				}
 
-					#header > nav > ul > li > a {
+					#header  nav > ul > li > a {
 						-moz-transition: box-shadow 0.2s ease-in-out;
 						-webkit-transition: box-shadow 0.2s ease-in-out;
 						-ms-transition: box-shadow 0.2s ease-in-out;
@@ -3538,15 +3572,15 @@ input, select, textarea {
 						text-decoration: none;
 					}
 
-						#header > nav > ul > li > a:hover {
+						#header  nav > ul > li > a:hover {
 							box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 						}
 
-						#header > nav > ul > li > a.dropdown {
+						#header  nav > ul > li > a.dropdown {
 							padding-left: 2.5rem;
 						}
 
-							#header > nav > ul > li > a.dropdown:before {
+							#header  nav > ul > li > a.dropdown:before {
 								-moz-transition: background-image 0.2s ease-in-out;
 								-webkit-transition: background-image 0.2s ease-in-out;
 								-ms-transition: background-image 0.2s ease-in-out;
@@ -3573,15 +3607,15 @@ input, select, textarea {
 								width: 1rem;
 							}
 
-							#header > nav > ul > li > a.dropdown:hover:before {
+							#header  nav > ul > li > a.dropdown:hover:before {
 								background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cstyle%3Eline %7Bstroke: %23fff%3Bstroke-width: 5px%3B%7D%3C/style%3E%3Cline x1='32' y1='16' x2='64' y2='48' /%3E%3Cline x1='32' y1='80' x2='64' y2='48' /%3E%3C/svg%3E");
 							}
 
-					#header > nav > ul > li > ul {
+					#header  nav > ul > li > ul {
 						display: none;
 					}
 
-					#header > nav > ul > li.active > a {
+					#header  nav > ul > li.active > a {
 						color: #ffffff;
 					}
 
@@ -3679,6 +3713,8 @@ input, select, textarea {
 				margin: 0 0 0 0.625rem;
 			}
 
+			
+
 		@media screen and (max-width: 1280px) {
 
 			#header {
@@ -3725,6 +3761,7 @@ input, select, textarea {
 					display: none;
 				}
 
+
 				#header > .navPanelToggle {
 					display: block;
 					right: 1rem;
@@ -3741,6 +3778,14 @@ input, select, textarea {
 					padding: 0;
 					position: absolute;
 					top: 0;
+				}
+
+				#mobile-toggle{
+					display: inline-block;
+					position: absolute;
+					top:0;
+					text-align: center;
+					
 				}
 
 		}
@@ -3926,7 +3971,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		color: #ffffff;
+		color: var(--dark-secondaryButton-color);
 	}
 
 		#banner input, #banner select, #banner textarea {
@@ -3934,11 +3979,11 @@ input, select, textarea {
 		}
 
 		#banner a, .icon.alt {
-			color: #ffffff;
+			color: var(--icon-colors);
 		}
 
 			#banner a:hover {
-				color: rgba(255, 255, 255, 0.65);
+				color: var(--hover-icon-colors);
 			}
 
 		#banner strong, #banner b {
@@ -3946,7 +3991,7 @@ input, select, textarea {
 		}
 
 		#banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-			color: white;
+			color: var(--dark-secondaryButton-color);
 		}
 
 		#banner h1 div {
@@ -3977,8 +4022,8 @@ input, select, textarea {
 		#banner button,
 		#banner .button {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 1px #ff8b77;
-			color: #ff8b77 !important;
+			box-shadow: inset 0 0 0 1px var(--dark-primary-button-color);
+			color: var(--dark-primary-button-color) !important;
 		}
 
 			#banner input[type="submit"]:hover,
@@ -4183,7 +4228,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		color: #ffffff;
+		color: var(--dark-secondaryButton-color);
 		text-align: center;
 	}
 
@@ -4192,7 +4237,7 @@ input, select, textarea {
 		}
 
 		#footer h1, #footer h2, #footer h3, #footer h4, #footer h5 {
-			color: #ffffff;
+			color: var(--dark-secondaryButton-color);
 		}
 
 		#footer input[type="text"],
